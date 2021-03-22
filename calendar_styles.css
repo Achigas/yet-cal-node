@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+.event .content-body {
+	background: #EFF1F5;
+}
+.event .calendar-container {
+	padding: 20px 50px;
+}
+.event .calendar-container h2 {
+	text-align: center;
+	color: #2A3246;
+	font-size: 22px;
+	
+}
+.event .calendar-container h2 span {
+	display: block;
+	color: #7E8593;
+	font-size: 18px;
+	font-weight: normal;
+}
+.event .calendar {
+	margin-top: 20px;
+	background-color: white;
+	border: 1px solid #B8BCC4;
+	border-radius: 20px;
+	padding: 20px 40px;
+}
+
