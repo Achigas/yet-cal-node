@@ -4071,14 +4071,14 @@ var FullCalendar = (function (exports) {
             nextYear: 'next year',
             year: 'year',
             today: 'today',
-            month: 'month',
-            week: 'week',
-            day: 'day',
+            month: 'Month',
+            week: 'Week',
+            day: 'Day',
             list: 'list',
         },
         weekText: 'W',
         allDayText: 'all-day',
-        moreLinkText: 'more',
+        moreLinkText: 'View more',
         noEventsText: 'No events to display',
     };
     function organizeRawLocales(explicitRawLocales) {
@@ -5562,7 +5562,7 @@ var FullCalendar = (function (exports) {
         root: 'fc-theme-standard',
         tableCellShaded: 'fc-cell-shaded',
         buttonGroup: 'fc-button-group',
-        button: 'fc-button fc-button-primary',
+        button: 'fc-button',
         buttonActive: 'fc-button-active',
     };
     StandardTheme.prototype.baseIconClass = 'fc-icon';
@@ -7565,19 +7565,30 @@ var FullCalendar = (function (exports) {
         };
         ToolbarSection.prototype.renderWidgetGroup = function (widgetGroup) {
             var props = this.props;
+            console.log(props)
             var theme = this.context.theme;
             var children = [];
+            var childrenTitle = [];
             var isOnlyButtons = true;
             for (var _i = 0, widgetGroup_1 = widgetGroup; _i < widgetGroup_1.length; _i++) {
                 var widget = widgetGroup_1[_i];
                 var buttonName = widget.buttonName, buttonClick = widget.buttonClick, buttonText = widget.buttonText, buttonIcon = widget.buttonIcon;
                 if (buttonName === 'title') {
                     isOnlyButtons = false;
-                    children.push(createElement("h2", { className: "fc-toolbar-title" }, props.title));
+                    var arrayMonthYear = props.title.split(/(\s+)/); //Splits out month and year for different formatting
+                    children.push(createElement("div",  { className: "fc-toolbar-title-group"}, childrenTitle));
+                    childrenTitle.push(createElement("h2", { className: "fc-toolbar-title fc-toolbar-month" }, arrayMonthYear[0]+ " "));
+                    childrenTitle.push(createElement("h4", { className: "fc-toolbar-title fc-toolbar-year"}, arrayMonthYear[2]));
                 }
                 else {
                     var ariaAttrs = buttonIcon ? { 'aria-label': buttonName } : {};
-                    var buttonClasses = ["fc-" + buttonName + "-button", theme.getClass('button')];
+                    //var buttonClasses = ["fc-" + buttonName + "-button", theme.getClass('button')];
+                    if(buttonIcon) {
+                        var buttonClasses =["fc-" + buttonName + "-button", "fc-icon-button", theme.getClass('button')]
+                    }
+                    else {
+                        var buttonClasses = ["fc-" + buttonName + "-button", "fc-text-button", theme.getClass('button')];
+                    }
                     if (buttonName === props.activeButton) {
                         buttonClasses.push(theme.getClass('buttonActive'));
                     }
@@ -8937,6 +8948,7 @@ var FullCalendar = (function (exports) {
         return StandardEvent;
     }(BaseComponent));
     function renderInnerContent(innerProps) {
+        console.log(innerProps)
         return (createElement("div", { className: "fc-event-main-frame" },
             innerProps.timeText && (createElement("div", { className: "fc-event-time" }, innerProps.timeText)),
             createElement("div", { className: "fc-event-title-container" },
@@ -11543,10 +11555,11 @@ var FullCalendar = (function (exports) {
         return TableListItemEvent;
     }(BaseComponent));
     function renderInnerContent$2(innerProps) {
+        console.log(innerProps)
         return (createElement(Fragment, null,
             createElement("div", { className: "fc-daygrid-event-dot", style: { borderColor: innerProps.borderColor || innerProps.backgroundColor } }),
-            innerProps.timeText && (createElement("div", { className: "fc-event-time" }, innerProps.timeText)),
-            createElement("div", { className: "fc-event-title" }, innerProps.event.title || createElement(Fragment, null, "\u00A0"))));
+            createElement("div", { className: "fc-event-title" }, innerProps.event.title || createElement(Fragment, null, "\u00A0")),
+            innerProps.timeText && (createElement("div", { className: "fc-event-time" }, innerProps.timeText))));
     }
     function getSegAnchorAttrs$1(seg) {
         var url = seg.eventRange.def.url;

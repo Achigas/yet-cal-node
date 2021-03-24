@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initialView: 'dayGridMonth',
     initialDate: '2021-03-07',
     headerToolbar: {
-      left: 'dayGridMonth, timeGridDay',
-      center: 'prevYear, prev, title, next, nextYear',
-      right:'dayGridMonth, timeGridDay'
+      left: 'dayGridMonth,timeGridDay',
+      center: 'prevYear,prev,title,next,nextYear',
+      right:'dayGridMonth,timeGridDay'
     },
     dayHeaderFormat: { weekday: "long" }, 
     events: [
