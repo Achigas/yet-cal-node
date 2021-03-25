@@ -4075,6 +4075,7 @@ var FullCalendar = (function (exports) {
             week: 'Week',
             day: 'Day',
             list: 'list',
+            legendButton: 'LEGEND',
         },
         weekText: 'W',
         allDayText: 'all-day',

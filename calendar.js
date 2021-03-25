@@ -13,7 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
       left: 'dayGridMonth,timeGridDay',
       center: 'prevYear,prev,title,next,nextYear',
-      right:'dayGridMonth,timeGridDay'
+      right:'legendButton,filterButton'
+    },
+    customButtons: {
+      legendButton: {
+          buttonText: "Legend",
+          click: function() {
+            legend.style.display = "inline-block";
+          }
+      },
+      filterButton: {
+        buttonText: "Filter",
+        click: function() {
+          console.log("filter clicked!")
+        }
+      }
     },
     dayHeaderFormat: { weekday: "long" }, 
     events: [
@@ -77,27 +91,42 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 });
 
-var modal = document.getElementById("myModal");
+var legend = document.getElementById("legend")
+var legendButton = document.getElementById("legendButton")
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, note open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+function displayLegend () {
+  var legend = document.getElementById("legend")
+  if (legend.style.display === "none") {
+    console.log("yay!")
+    legend.style.display="inline-block";
+  }
+  else {
+    legend.style.display="none"
   }
 }
+
+
+// var modal = document.getElementById("myModal");
+
+// // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+// // When the user clicks on the button, note open the modal
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }

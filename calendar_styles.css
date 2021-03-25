@@ -33,7 +33,7 @@
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: absolute; /* Stay in place */
 	z-index: 1; /* Sit on top */
 	top: auto;
@@ -111,8 +111,8 @@
 }
 
 /*Legend*/
-.legend{
-	display: inline-block;
+.legend {
+	display: none;
 	align-items: center;
 }
 
@@ -182,4 +182,15 @@
 .event-text span {
 	display: inline-block;
 	font-weight: 400;
+}
+
+/* Legend Button */
+.fc-legend-button {
+	display: inline-block;
+}
+
+.legend-icon-text {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #7E8593;
+	opacity: 40%;
 }
