@@ -797,6 +797,10 @@ A HORIZONTAL event
     position: relative;
     min-height: 100%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
   }
+.fc .fc-daygrid-day:hover {
+  background-color: #E3E0E0;
+  opacity: 50%;
+}
 .fc {
 
   /* cell top */

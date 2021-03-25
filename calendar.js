@@ -38,15 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     dayHeaderFormat: { weekday: "long" }, 
     events: [
       {
-        title: 'All Day Event',
-        start: '2021-03-01'
-      },
-      {
-        title: 'Long Event',
-        start: '2021-03-07',
-        end: '2021-03-10'
-      },
-      {
         groupId: '999',
         title: 'Repeating Event',
         start: '2021-03-09T16:00:00',
@@ -57,11 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         title: 'Repeating Event',
         start: '2021-03-16T16:00:00',
         borderColor: "#955DAA"
-      },
-      {
-        title: 'Conference',
-        start: '2021-03-11',
-        end: '2021-03-13'
       },
       {
         title: 'Meeting',
