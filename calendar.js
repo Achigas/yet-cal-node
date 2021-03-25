@@ -3,6 +3,12 @@
 // import timeGridPlugin from '@fullcalendar/timegrid';
 // import listPlugin from '@fullcalendar/list';
 
+var modalEl = document.getElementById("myModal");
+// Get the save button that closes the modal
+var modalButtonEl = document.getElementById("modal-button");
+// Get the <span> element that closes the modal
+var modalCloseEl = document.getElementsByClassName("close")[0];
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
@@ -91,8 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 });
 
-var legend = document.getElementById("legend")
-var legendButton = document.getElementById("legendButton")
+//Legend button functionality
 
 function displayLegend () {
   var legend = document.getElementById("legend")
@@ -105,28 +110,25 @@ function displayLegend () {
   }
 }
 
+//Modal Functionality
 
-// var modal = document.getElementById("myModal");
+// When the user clicks on the button, note open the modal
+function saveNote() {
+  var modalEl = document.getElementById("myModal");
+  console.log("clickedSave")
+  modalEl.style.display = "none";
+}
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
+// When the user clicks on <span> (x), close the modal
+function closeNote() {
+  var modalEl = document.getElementById("myModal");
+  modalEl.style.display = "none";
+}
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, note open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  var modalEl = document.getElementById("myModal");
+  if (event.target == modalEl) {
+    modalEl.style.display = "none";
+  }
+}

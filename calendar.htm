@@ -19,11 +19,11 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-              <span class="close">&otimes;</span>
+              <span class="close" onclick="closeNote()">&otimes;</span>
               <p class="modal-header">NOTE: September 3, 2020</p>
               <div class="modal-note-area">
                 <textarea class="modal-text-area" placeholder="Start typing your note here..." rows="10"></textarea>
-                <button type="button" class="modal-button">SAVE NOTE</button>
+                <button type="button" class="modal-button" id="modal-button" onclick="saveNote()">SAVE NOTE</button>
               </div>
             </div>
 
