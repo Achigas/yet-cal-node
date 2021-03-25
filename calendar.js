@@ -29,12 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         groupId: '999',
         title: 'Repeating Event',
-        start: '2021-03-09T16:00:00'
+        start: '2021-03-09T16:00:00',
+        borderColor: "#955DAA"
       },
       {
         groupId: '999',
         title: 'Repeating Event',
-        start: '2021-03-16T16:00:00'
+        start: '2021-03-16T16:00:00',
+        borderColor: "#955DAA"
       },
       {
         title: 'Conference',
@@ -44,19 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         title: 'Meeting',
         start: '2021-03-12T10:30:00',
-        end: '2021-03-12T12:30:00'
+        end: '2021-03-12T12:30:00',
+        backgroundColor: "#4d7cb2",
+        borderColor: "#4d7cb2",
+        textColor: "blue"
       },
       {
         title: 'Lunch',
-        start: '2021-03-12T12:00:00'
+        start: '2021-03-12T12:00:00',
+        borderColor: "#E0AB62",
       },
       {
         title: 'Meeting',
-        start: '2021-03-12T14:30:00'
+        start: '2021-03-12T14:30:00',
+        borderColor: "#77B295",
       },
       {
         title: 'Birthday Party',
-        start: '2021-03-13T07:00:00'
+        start: '2021-03-13T07:00:00',
+        borderColor: "#955DAA"
       },
       {
         title: 'Click for Google',
@@ -68,3 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   calendar.render();
 });
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, note open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

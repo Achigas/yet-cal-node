@@ -30,3 +30,156 @@
   max-width: 1100px;
   margin: 40px auto;
 }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	top: auto;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+	background-color: #2A3246;
+	opacity: 75%; /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	border-radius: 20px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+	color: #2A3246;
+	font-weight: bold;
+	margin: 0;
+	float: left;
+	padding-bottom: 5px;
+	margin: 5px 0px;
+}
+
+.modal-text-area {
+	width: 100%;
+	resize: none;
+	margin-bottom: -20px;
+	margin-right: -10px;
+	border-color: #707070;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-sizing: border-box;
+}
+
+.modal-text-area::placeholder {
+	font-style: italic;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.modal-button {
+	width: 100%;
+	height: 35px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 600;
+	background-color: #D8DCE6;
+	border-bottom-right-radius: 10px; 
+	border-bottom-left-radius: 10px;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+	cursor: pointer;
+	background-color: #c9ccd4;
+}
+
+/* The Close Button */
+.close {
+	color: #7E8593;
+  float: right;
+  font-size: 25px;
+	border-radius: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Legend*/
+.legend{
+	display: inline-block;
+	align-items: center;
+}
+
+.legend-item {
+	display: inline-block;
+	padding: 2px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #2A3246;
+	font-weight: 350;
+}
+
+.legend-dot {
+	display: inline-block;
+	box-sizing: content-box;
+	width: 0;
+	height: 0;
+	border-radius: 5px;
+	border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
+}
+
+.legend-color-1 {
+	border: 30px solid #FFD498;
+	border: calc(var(--fc-list-event-dot-width, 50px) / 2) solid var(--fc-event-border-color, #FFD498);
+}
+.legend-color-2 {
+	border: 30px solid #A8D18D;
+	border: calc(var(--fc-list-event-dot-width, 50px) / 2) solid var(--fc-event-border-color, #A8D18D);
+}
+.legend-color-3 {
+	border: 30px solid #97B8DD;
+	border: calc(var(--fc-list-event-dot-width, 50px) / 2) solid var(--fc-event-border-color, #97B8DD);
+}
+.legend-color-4 {
+	border: 30px solid #C69Cd6;
+	border: calc(var(--fc-list-event-dot-width, 50px) / 2) solid var(--fc-event-border-color, #C69Cd6);
+}
+
+
+/*event structure */
+
+.event-block {
+	display: inline-block;
+	background: #ECF3FB;
+	padding: 2px;
+	border-left: thick solid #97B8DD;
+}
+
+.legend-dot-smaller {
+	display: inline-block;
+	box-sizing: content-box;
+	width: 0;
+	height: 0;
+	border-radius: 5px;
+	border-radius: calc(var(--fc-list-event-dot-width, 8px) / 2);
+	border: 30px solid #97B8DD;
+	border: calc(8px / 2) solid var(--fc-event-border-color, #97B8DD);
+}
+
+.event-text {
+	display: inline-block;
+	color: #4D7CB2;
+	margin: 1px;
+	font-weight: 600;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.event-text span {
+	display: inline-block;
+	font-weight: 400;
+}
